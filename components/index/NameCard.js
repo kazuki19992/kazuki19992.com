@@ -13,7 +13,7 @@ export default function NameCard (props) {
       <div className="flex flex-col space-y-4">
         <div>
           <p className="text-2xl font-bold">カズ之助</p>
-          <p className="text-sm text-gray-500">エンジニア</p>
+          <p className="text-sm text-gray-500">人です</p>
         </div>
 
         <div className="">
