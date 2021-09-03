@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div#empty_pg,
+div#__next > div#empty_pg > div#contents_layout {
+  height: 100%;
+}
+
+html {
+  @apply bg-gray-100;
+}
