@@ -6,11 +6,11 @@ html,
 body,
 body > div:first-child,
 div#__next,
-div#__next > div#empty_pg,
-div#__next > div#empty_pg > div#contents_layout {
+div#__next > div#contents_layout{
   height: 100%;
 }
 
 html {
-  @apply bg-gray-100;
+  @apply bg-gray-200;
+  @apply text-gray-800;
 }
