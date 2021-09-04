@@ -8,7 +8,7 @@ import datas from '../../data/datas'
 
 export default function NameCard (props) {
   return (
-    <div className="flex p-8 rounded-md shadow-md space-x-5 justify-center items-center bg-white">
+    <div className="flex p-8 rounded-md shadow-md space-x-5 justify-center items-center bg-green-50 ripple-bg-green-50">
       <Image src="/images/icon.png" width={200} height={200} />
       <div className="flex flex-col space-y-4">
         <div>
