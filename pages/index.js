@@ -1,14 +1,22 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import Appbar from '../components/appBar'
 
 import NameCard from '../components/index/NameCard'
 
 const Home = () => {
   return (
+    <>
+      <Appbar fixed topPage />
       <section className="h-screen w-4/5 max-w-5xl mx-auto flex items-center justify-center flex-col">
-        {/* <h1 className="mb-4 text-indigo-900 text-3xl font-bold">かずのすけくんだよ</h1>
-        <p className="">まだ工事中だよ</p> */}
-        <NameCard />
+        <p className="text-gray-500 text-lg mb-4">＼ CLICK ME! ／</p>
+        <Link href="/about">
+          <a>
+            <NameCard />
+          </a>
+        </Link>
       </section>
+    </>
   )
 }
 
