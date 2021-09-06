@@ -6,10 +6,18 @@ import { IsDarkModeContext } from '../pages/_app'
 export default function Appbar (props) {
 
   const isFixed = props.fixed ? 'fixed ' : ''
-  const headerClassName = isFixed + 'w-full h-20 flex items-center z-50'
+  const headerClassName = isFixed + 'w-full h-20 flex items-center z-50 kazuki19992Header'
 
   return (
     <>
+    <style>
+      {`
+        .kazuki19992Header {
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+      `}
+    </style>
     <header className={headerClassName} style={{backdropFilter: 'blur(12px)'}}>
       <div className="flex items-center container mx-auto">
         <div className="flex justify-between items-center flex-row">
