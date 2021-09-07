@@ -205,7 +205,7 @@ const About = () => {
             </div>
           </div>
         </a>
-        <a href="https://discord.gg/QDcv6xNKpN" target="_blank" rel="noreferrer">
+        <a href="https://discord.gg/XpA3StwwTm" target="_blank" rel="noreferrer">
           <div className="flex rounded-md bg-indigo-500 text-white p-3 shadow-md space-x-2 items-center">
             <FontAwesomeIcon icon={faDiscord} size="2x" />
             <div className="flex justify-center items-center flex-col">
