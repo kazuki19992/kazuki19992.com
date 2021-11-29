@@ -18,7 +18,7 @@ const About = () => {
   return (
     <ToastProvider>
       <Appbar fixed/>
-      <div className="lg:flex left-auto right-auto">
+      <div className="container mx-auto lg:flex left-auto right-auto">
         <div className="lg:w-1/3">
           <section className="pt-10 w-4/5 max-w-5xl mx-auto flex items-center justify-center flex-col">
             <Image src="/images/icon.png" width={200} height={200} />
