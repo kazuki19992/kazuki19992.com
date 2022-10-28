@@ -1,24 +1,41 @@
 import type { NextPage } from "next";
 import { DashboardCardLayout } from "../components/layouts/DashboardCardLayout";
-import { DefaultLayout } from "../components/layouts/DefaultLayout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import * as fa from "@fortawesome/free-solid-svg-icons";
+import * as faBrands from "@fortawesome/free-brands-svg-icons";
+import { SkillsCard } from "../components/dashboards/cards/SkillsCard";
 import {
-  faGithub,
-  faTwitter,
-  faDiscord,
-  faReact,
-  faNodeJs,
-  faJs,
-} from "@fortawesome/free-brands-svg-icons";
-import { SkillCards } from "../components/dashboards/cards/SkillCards";
-import { SkillCardsList } from "../types/components/cards";
+  ContactsCardDataList,
+  SkillCardsList,
+} from "../types/components/cards";
+import * as simpleIcons from "@icons-pack/react-simple-icons";
+import { ContactsCard } from "../components/dashboards/cards/ContactsCard";
 
 const Home: NextPage = () => {
+  const contactData: ContactsCardDataList = [
+    { icon: fa.faEnvelope, value: "kazuki19992@gmail.com", genre: "email" },
+    { icon: faBrands.faTwitter, value: "@kazuki19992", genre: "Twitter" },
+    { icon: faBrands.faGithub, value: "kazuki19992", genre: "GitHub" },
+    {
+      icon: faBrands.faSpeakerDeck,
+      value: "kazuki19992",
+      genre: "SpeakerDeck",
+    },
+    { icon: faBrands.faDiscord, value: "カズ之助#0907", genre: "Discord" },
+    {
+      icon: simpleIcons.Zenn,
+      value: "カズ之助#0907",
+      genre: "Discord",
+      iconLib: "si",
+    },
+  ];
   const skillData: SkillCardsList = [
-    { icon: faReact, name: "React" },
-    { icon: faNodeJs, name: "React" },
-    { icon: faJs, name: "React" },
+    { icon: faBrands.faReact, name: "React", iconLib: "fa" },
+    { icon: faBrands.faNodeJs, name: "NodeJS", iconLib: "fa" },
+    { icon: simpleIcons.Typescript, name: "Typescript", iconLib: "si" },
+    { icon: simpleIcons.Electron, name: "electron", iconLib: "si" },
+    { icon: faBrands.faPhp, name: "PHP", iconLib: "fa" },
+    { icon: faBrands.faJava, name: "Java", iconLib: "fa" },
+    { icon: fa.faVial, name: "Test", iconLib: "fa" },
   ];
   return (
     <div className="flex justify-center items-center w-full h-full">
@@ -39,34 +56,18 @@ const Home: NextPage = () => {
         </div>
 
         {/* Dashboard */}
-        <div className="w-full flex justify-between space-x-2 pt-2">
-          <div className="flex-1">
-            <div className="flex w-full justify-between space-x-1">
-              <DashboardCardLayout title="Contact">
-                <div className="flex items-center justify-start space-x-2 pb-1">
-                  <FontAwesomeIcon icon={faEnvelope} className="block fa-fw" />
-                  <p className="flex-grow">kazuki19992@gmail.com</p>
-                </div>
-                <div className="flex items-center justify-start space-x-2 pb-1">
-                  <FontAwesomeIcon icon={faGithub} className="block fa-fw" />
-                  <p className="flex-grow">kazuki19992</p>
-                </div>
-                <div className="flex items-center justify-start space-x-2 pb-1">
-                  <FontAwesomeIcon icon={faTwitter} className="block fa-fw" />
-                  <p className="flex-grow">kazuki19992</p>
-                </div>
-                <div className="flex items-center justify-start space-x-2 pb-1">
-                  <FontAwesomeIcon icon={faDiscord} className="block fa-fw" />
-                  <p className="flex-grow">カズ之助#0907</p>
-                </div>
+        <div className="mt-4">
+          <p className="text-2xl font-bold">Profile</p>
+          <div className="w-full flex justify-between space-x-2 pt-2 items-stretch">
+            <div className="flex-1 space-y-2">
+              <ContactsCard dataList={contactData} />
+              <SkillsCard dataList={skillData} />
+            </div>
+            <div className="flex-1 space-y-2">
+              <DashboardCardLayout title="News" className="h-full">
+                <p>contents</p>
               </DashboardCardLayout>
             </div>
-          </div>
-          <div className="flex-1">
-            <SkillCards dataList={skillData} />
-            <DashboardCardLayout title="News">
-              <p>contents</p>
-            </DashboardCardLayout>
           </div>
         </div>
       </div>

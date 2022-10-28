@@ -15,6 +15,7 @@
     "next/core-web-vitals"
   ],
   "rules": {
-    "no-console": ["warn", { "allow": ["info", "warn", "error"]}]
+    "no-console": ["warn", { "allow": ["info", "warn", "error"]}],
+    "@next/next/no-img-element": "off"
   }
 }

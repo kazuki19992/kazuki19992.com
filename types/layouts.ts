@@ -7,4 +7,5 @@ export type DefaultLayoutProps = LayoutProps
 
 export type DashboardCardLayoutProps = LayoutProps & {
   title: string;
+  className?: string;
 }
