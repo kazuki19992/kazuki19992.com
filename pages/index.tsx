@@ -23,19 +23,19 @@ const Home: NextPage = () => {
     { icon: faBrands.faDiscord, value: "カズ之助#0907", genre: "Discord" },
     {
       icon: simpleIcons.Zenn,
-      value: "カズ之助#0907",
-      genre: "Discord",
+      value: "kazuki19992",
+      genre: "Zenn",
       iconLib: "si",
     },
   ];
   const skillData: SkillCardsList = [
     { icon: faBrands.faReact, name: "React", iconLib: "fa" },
+    { icon: simpleIcons.Nextdotjs, name: "Next.js", iconLib: "si" },
     { icon: faBrands.faNodeJs, name: "NodeJS", iconLib: "fa" },
     { icon: simpleIcons.Typescript, name: "Typescript", iconLib: "si" },
     { icon: simpleIcons.Electron, name: "electron", iconLib: "si" },
     { icon: faBrands.faPhp, name: "PHP", iconLib: "fa" },
     { icon: faBrands.faJava, name: "Java", iconLib: "fa" },
-    { icon: fa.faVial, name: "Test", iconLib: "fa" },
   ];
   return (
     <div className="flex justify-center items-center w-full h-full">
