@@ -1,18 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class', // or 'media' or 'class'
-  theme: {
-    ripple: theme => ({
-      colors: theme('colors'),
-      darken: 0.1
-    }),
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [
-    require('tailwindcss-ripple')()
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
   ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 }
