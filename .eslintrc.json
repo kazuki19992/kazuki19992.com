@@ -1,6 +1,6 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint", "prettier", "react-hooks", "react"],
+  "plugins": ["@typescript-eslint", "prettier", "react-hooks", "react", "tailwindcss"],
   "env": {
     "es6": true,
     "node": true,
@@ -12,7 +12,8 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended"
   ],
   "rules": {
     "no-console": ["warn", { "allow": ["info", "warn", "error"]}],

@@ -9,3 +9,8 @@ export type DashboardCardLayoutProps = LayoutProps & {
   title: string;
   className?: string;
 }
+
+export type ContentGroupProps = {
+  groupTitle: string;
+  children: ReactNode;
+}

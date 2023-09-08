@@ -9,6 +9,7 @@ import {
 } from "../types/components/cards";
 import * as simpleIcons from "@icons-pack/react-simple-icons";
 import { ContactsCard } from "../components/dashboards/cards/ContactsCard";
+import { CarrierStepper } from "../components/dashboards/contents/CarrierStepper";
 
 const Home: NextPage = () => {
   const contactData: ContactsCardDataList = [
@@ -38,16 +39,16 @@ const Home: NextPage = () => {
     { icon: faBrands.faJava, name: "Java", iconLib: "fa" },
   ];
   return (
-    <div className="flex justify-center items-center w-full h-full">
+    <div className="flex w-full items-center justify-center lg:h-full">
       <div className="w-full">
-        <div className="flex px-8 justify-center items-center space-x-3 pb-3 w-full">
+        <div className="flex w-full items-center justify-center space-x-3 px-8 pb-3">
           <img
             src="/icon.jpg"
             alt="icon"
-            className="w-32 h-32 rounded-full block shadow"
+            className="block h-32 w-32 rounded-full shadow"
           />
           <div className="w-72">
-            <p className="text-4xl pb-2 border-b mb-2 dark:border-slate-300 border-slate-700">
+            <p className="mb-2 border-b border-slate-700 pb-2 text-4xl dark:border-slate-300">
               カズ之助
             </p>
             <p className="italic">@kazuki19992</p>
@@ -58,14 +59,14 @@ const Home: NextPage = () => {
         {/* Dashboard */}
         <div className="mt-4">
           <p className="text-2xl font-bold">Profile</p>
-          <div className="w-full flex justify-between space-x-2 pt-2 items-stretch">
+          <div className="flex w-full flex-col items-stretch justify-between gap-2 pt-2 lg:flex-row">
             <div className="flex-1 space-y-2">
               <ContactsCard dataList={contactData} />
               <SkillsCard dataList={skillData} />
             </div>
-            <div className="flex-1 space-y-2">
-              <DashboardCardLayout title="News" className="h-full">
-                <p>contents</p>
+            <div className="min-w-fit flex-1 space-y-2">
+              <DashboardCardLayout title="Carrier" className="h-full p-3">
+                <CarrierStepper />
               </DashboardCardLayout>
             </div>
           </div>

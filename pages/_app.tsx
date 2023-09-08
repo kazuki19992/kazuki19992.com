@@ -4,9 +4,11 @@ import { DefaultLayout } from "../components/layouts/DefaultLayout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <DefaultLayout>
-      <Component {...pageProps} />
-    </DefaultLayout>
+    <>
+      <DefaultLayout>
+        <Component {...pageProps} />
+      </DefaultLayout>
+    </>
   );
 }
 

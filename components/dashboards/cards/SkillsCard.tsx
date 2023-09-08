@@ -6,18 +6,19 @@ import { SkillCardsProps } from "../../../types/components/cards";
 export const SkillsCard = (props: SkillCardsProps) => {
   return (
     <DashboardCardLayout title="Skills">
-      <div className="flex justify-between items-center space-x-2 pb-2">
+      <div className="flex items-center justify-between space-x-2 pb-2">
         {props.dataList.map((data, index) => {
           const Si = data.icon;
           return (
             <div
-              className="flex items-center justify-center w-10 h-10 rounded border border-slate-700 dark:border-slate-300"
+              className="flex h-10 w-10 flex-wrap items-center justify-center rounded border border-slate-700 dark:border-slate-300"
               key={index}
             >
               {data.iconLib === "fa" ? (
                 <FontAwesomeIcon
                   icon={data.icon}
-                  className="block fa-fw text-2xl"
+                  // eslint-disable-next-line tailwindcss/no-custom-classname
+                  className="fa-fw block text-2xl"
                 />
               ) : (
                 <Si className="block text-2xl" />

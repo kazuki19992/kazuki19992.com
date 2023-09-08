@@ -4,9 +4,9 @@ import { SideMenu } from "../sideMenu/SideMenu";
 
 export const DefaultLayout = (props: DefaultLayoutProps) => {
   return (
-    <div className="w-screen h-screen flex">
+    <div className="flex h-screen w-screen items-start">
       <SideMenu></SideMenu>
-      <div className="flex-grow h-full overflow-y-hidden bg-slate-300 text-slate-800 dark:bg-slate-700 dark:text-slate-200 px-10 py-5">
+      <div className="h-full grow overflow-y-auto bg-slate-300 px-10 py-5 text-slate-800 dark:bg-slate-700 dark:text-slate-200">
         {props.children}
       </div>
     </div>
