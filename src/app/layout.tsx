@@ -1,8 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "kazuki19992.com",
@@ -15,8 +12,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja">
+      <body className={"flex"}>
+        <div className=" sticky top-0 hidden w-64 overflow-hidden border lg:block">
+          a
+        </div>
+        <div className="grow">
+          <div className="fixed h-16 w-full border"></div>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
