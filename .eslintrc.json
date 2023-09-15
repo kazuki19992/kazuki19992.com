@@ -17,6 +17,7 @@
   ],
   "rules": {
     "no-console": ["warn", { "allow": ["info", "warn", "error"]}],
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-explicit-any": "error"
   }
 }

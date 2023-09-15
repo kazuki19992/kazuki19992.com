@@ -13,13 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={"flex"}>
+      <body className={"flex h-screen w-screen"}>
         <div className=" sticky top-0 hidden w-64 overflow-hidden border lg:block">
           a
         </div>
-        <div className="grow">
-          <div className="fixed h-16 w-full border"></div>
-          {children}
+        <div className="h-full grow flex-col">
+          <div className="h-full">{children}</div>
         </div>
       </body>
     </html>
