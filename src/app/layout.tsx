@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={"flex h-screen w-screen"}>
+      <body className={"flex h-screen w-screen bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100"}>
         <div className=" sticky top-0 hidden w-64 overflow-hidden border lg:block">
           a
         </div>

@@ -1,4 +1,7 @@
-import { InfoType } from "../../../types";
+import { InfoType } from "../../types";
+import { BiCommentError, BiListCheck, BiSolidError } from "react-icons/bi"
+import {BsInfoCircleFill} from "react-icons/bs"
+import {IconType} from "react-icons"
 
 export const useAlert = () => {
   /**
@@ -40,7 +43,30 @@ export const useAlert = () => {
     }
   };
 
+  /**
+   * アイコンを取得する
+   * @param type 情報の型
+   * @returns アイコン
+   */
+  const getIcon = (type: InfoType): IconType => {
+    switch (type) {
+      case InfoType.ERROR: {
+        return BiCommentError;
+      }
+      case InfoType.INFO: {
+        return BsInfoCircleFill;
+      }
+      case InfoType.SUCCESS: {
+        return BiListCheck;
+      }
+      case InfoType.WARN: {
+        return BiSolidError;
+      }
+    }
+  }
+
   return {
     getColor,
+    getIcon
   };
 };

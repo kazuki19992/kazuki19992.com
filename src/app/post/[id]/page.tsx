@@ -1,15 +1,16 @@
-import { Alert } from "@/components";
-import { InfoType } from "../../../../types";
+import { PageTitle } from "./components";
 
 const Page = () => {
   return (
-    <div className="container p-3">
-      <h1 className="text-2xl font-bold">ここに記事タイトル</h1>
-      <p className="text-xs text-gray-900/50">Last update: 2022/12/31 10:56</p>
-      <Alert
-        type={InfoType.WARN}
-        message={"この記事の最終更新は半年前です。"}
-      />
+    <div className="w-full">
+      <PageTitle title="Vite + NEXT.js + microCMS + Tailwindで作り直した" lastUpdate={new Date()}/>
+
+      <div className="container mx-auto p-3">
+        {/* この内容はダミーの内容 */}
+
+        <h2 className="mb-1 mt-2 text-2xl font-bold">はじめに</h2>
+        <p>これはダミーの記事です。<br /></p>
+      </div>
     </div>
   );
 };
