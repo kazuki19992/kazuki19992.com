@@ -1,0 +1,11 @@
+[install]
+# Use bun's native package manager
+cache = false
+
+[run]
+# Use bun to run scripts by default
+shell = "bun"
+
+[test]
+# Configure test runner
+preload = ["./setup-tests.ts"]

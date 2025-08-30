@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 
-import Terminal from "@/components/Terminal";
 import PortfolioPage from "@/components/PortfolioPage";
-import { PROFILE, SOCIAL_LINKS } from "@/constants/profile";
+import Terminal from "@/components/Terminal";
+import { PROFILE } from "@/constants/profile";
 
 export default function Home() {
-  const [activeWindow, setActiveWindow] = useState<"terminal" | "portfolio">("portfolio");
+  const [activeWindow, setActiveWindow] = useState<"terminal" | "portfolio">(
+    "portfolio"
+  );
 
   return (
     <div className="h-screen overflow-hidden bg-gray-900 font-mono text-green-400">

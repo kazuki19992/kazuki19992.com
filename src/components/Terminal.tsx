@@ -1,8 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { CONTACT, PROFILE, SOCIAL_LINKS, TERMINAL_CONFIG } from "@/constants/profile";
+import {
+  CONTACT,
+  PROFILE,
+  SOCIAL_LINKS,
+  TERMINAL_CONFIG,
+} from "@/constants/profile";
 
 interface CommandHistory {
   command: string;
@@ -50,7 +55,7 @@ const commands = {
     "whois      - Display user information",
     "skills     - Show technical skills and proficiency",
     "projects   - List portfolio projects",
-    "experience - Display work and education history", 
+    "experience - Display work and education history",
     "contact    - Get contact information",
     "social     - Show social media links",
     "resume     - Download resume (simulated)",
@@ -70,22 +75,22 @@ const commands = {
     const allSkills = {
       frontend: {
         "React/Next.js": "████████████████████ 95%",
-        "TypeScript": "█████████████████░░░ 85%",
-        "JavaScript": "████████████████████ 90%",
+        TypeScript: "█████████████████░░░ 85%",
+        JavaScript: "████████████████████ 90%",
         "Tailwind CSS": "███████████████████░ 90%",
         "HTML/CSS": "████████████████████ 95%",
       },
       backend: {
         "Node.js": "██████████████░░░░░░ 70%",
         "Express.js": "████████████░░░░░░░░ 60%",
-        "PostgreSQL": "███████████░░░░░░░░░ 55%",
+        PostgreSQL: "███████████░░░░░░░░░ 55%",
       },
       tools: {
         "Git/GitHub": "███████████████████░ 90%",
         "VS Code": "████████████████████ 95%",
-        "Figma": "██████████████░░░░░░ 70%",
-        "Docker": "████████░░░░░░░░░░░░ 40%",
-      }
+        Figma: "██████████████░░░░░░ 70%",
+        Docker: "████████░░░░░░░░░░░░ 40%",
+      },
     };
 
     if (!args) {
@@ -103,12 +108,16 @@ const commands = {
       const category = args.toLowerCase();
       if (category in allSkills) {
         const result = [`${category.toUpperCase()} SKILLS:`, ""];
-        Object.entries(allSkills[category as keyof typeof allSkills]).forEach(([skill, level]) => {
-          result.push(`  ${skill.padEnd(15)} ${level}`);
-        });
+        Object.entries(allSkills[category as keyof typeof allSkills]).forEach(
+          ([skill, level]) => {
+            result.push(`  ${skill.padEnd(15)} ${level}`);
+          }
+        );
         return result;
       } else {
-        return [`Category '${args}' not found. Available: frontend, backend, tools`];
+        return [
+          `Category '${args}' not found. Available: frontend, backend, tools`,
+        ];
       }
     }
   },
@@ -144,7 +153,7 @@ const commands = {
     "             Computer Science & Engineering",
     "             Focus: Web Development & Software Engineering",
     "",
-    "💼 EXPERIENCE", 
+    "💼 EXPERIENCE",
     "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
     "2024-Present Frontend Developer Intern",
     "             Working on modern web applications",
@@ -181,10 +190,10 @@ const commands = {
   social: () => [
     "Social Media & Links:",
     "",
-    `🔗 GitHub:    ${SOCIAL_LINKS.github.url.replace('https://', '')}`,
-    `🔗 Twitter:   ${SOCIAL_LINKS.twitter.url.replace('https://', '')}`,
-    `🔗 LinkedIn:  ${SOCIAL_LINKS.linkedin.url.replace('https://', '')}`,
-    `🔗 Blog:      ${SOCIAL_LINKS.blog.url.replace('https://', '')}`,
+    `🔗 GitHub:    ${SOCIAL_LINKS.github.url.replace("https://", "")}`,
+    `🔗 Twitter:   ${SOCIAL_LINKS.twitter.url.replace("https://", "")}`,
+    `🔗 LinkedIn:  ${SOCIAL_LINKS.linkedin.url.replace("https://", "")}`,
+    `🔗 Blog:      ${SOCIAL_LINKS.blog.url.replace("https://", "")}`,
     `🔗 Portfolio: ${CONTACT.domain}`,
     "",
     "Latest Activity:",
@@ -201,7 +210,7 @@ const commands = {
     "",
     "Resume includes:",
     "• Complete work history",
-    "• Technical skills assessment", 
+    "• Technical skills assessment",
     "• Project portfolio",
     "• Education details",
     "• References",
@@ -226,19 +235,19 @@ const commands = {
   blog: () => [
     "Recent Blog Posts:",
     "",
-    "📝 \"Building Interactive Terminals with React\"",
+    '📝 "Building Interactive Terminals with React"',
     "   Published: 2024-08-30 | 5 min read",
     "   Creating engaging CLI-style interfaces for the web",
     "",
-    "📝 \"Modern CSS Grid Layouts for Responsive Design\"",
+    '📝 "Modern CSS Grid Layouts for Responsive Design"',
     "   Published: 2024-08-25 | 8 min read",
     "   Advanced grid techniques and best practices",
     "",
-    "📝 \"TypeScript Tips for React Developers\"",
+    '📝 "TypeScript Tips for React Developers"',
     "   Published: 2024-08-20 | 6 min read",
     "   Improving type safety in React applications",
     "",
-    `Visit ${SOCIAL_LINKS.blog.url.replace('https://', '')} for more articles`,
+    `Visit ${SOCIAL_LINKS.blog.url.replace("https://", "")} for more articles`,
     "",
   ],
   ascii: () => [
@@ -263,12 +272,16 @@ const commands = {
     "                                                        ",
   ],
   matrix: () => {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()";
+    const chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()";
     const lines = [];
     for (let i = 0; i < 15; i++) {
       let line = "";
       for (let j = 0; j < 60; j++) {
-        line += Math.random() > 0.5 ? chars[Math.floor(Math.random() * chars.length)] : " ";
+        line +=
+          Math.random() > 0.5
+            ? chars[Math.floor(Math.random() * chars.length)]
+            : " ";
       }
       lines.push(line);
     }
@@ -317,20 +330,25 @@ export default function Terminal() {
 
     let output: string[] = [];
     if (command in commands) {
-      const cmdFunction = commands[command as keyof typeof commands] as any;
+      const cmdFunction = commands[command as keyof typeof commands] as (
+        args?: string
+      ) => string[];
       output = cmdFunction(args || undefined);
     } else if (command === "") {
       output = [];
     } else {
-      output = [`Command not found: ${command}`, "Type 'help' for available commands"];
+      output = [
+        `Command not found: ${command}`,
+        "Type 'help' for available commands",
+      ];
     }
 
-    setHistory(prev => [...prev, { command: cmd, output, timestamp }]);
+    setHistory((prev) => [...prev, { command: cmd, output, timestamp }]);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     executeCommand(currentCommand);
     setCurrentCommand("");
   };
@@ -344,37 +362,42 @@ export default function Terminal() {
   useEffect(() => {
     // Initial welcome message
     setTimeout(() => {
-      setHistory([{
-        command: "welcome",
-        output: [
-          "╔════════════════════════════════════════════════════════╗",
-          `║               ${TERMINAL_CONFIG.welcomeTitle}        ║`,
-          `║                    ${TERMINAL_CONFIG.version}                   ║`,
-          "╚════════════════════════════════════════════════════════╝",
-          "",
-          "🚀 Interactive Terminal Portfolio Experience",
-          "💻 Built with Next.js, TypeScript & Tailwind CSS",
-          "",
-          "Quick Start:",
-          "• Type 'help' to see all available commands",
-          "• Try 'whois' to learn more about me",
-          "• Use 'skills' to see my technical abilities",
-          "• Run 'projects' to view my work",
-          "",
-          "Pro tip: Try 'ascii' or 'matrix' for some fun! 🎉",
-          "",
-        ],
-        timestamp: new Date(),
-      }]);
+      setHistory([
+        {
+          command: "welcome",
+          output: [
+            "╔════════════════════════════════════════════════════════╗",
+            `║               ${TERMINAL_CONFIG.welcomeTitle}        ║`,
+            `║                    ${TERMINAL_CONFIG.version}                   ║`,
+            "╚════════════════════════════════════════════════════════╝",
+            "",
+            "🚀 Interactive Terminal Portfolio Experience",
+            "💻 Built with Next.js, TypeScript & Tailwind CSS",
+            "",
+            "Quick Start:",
+            "• Type 'help' to see all available commands",
+            "• Try 'whois' to learn more about me",
+            "• Use 'skills' to see my technical abilities",
+            "• Run 'projects' to view my work",
+            "",
+            "Pro tip: Try 'ascii' or 'matrix' for some fun! 🎉",
+            "",
+          ],
+          timestamp: new Date(),
+        },
+      ]);
     }, 1000);
   }, []);
 
   return (
-    <div className="bg-gray-900 text-green-400 text-sm flex flex-col h-full" style={{ fontFamily: "'UDEVGothicNF', 'Courier New', monospace" }}>
+    <div
+      className="flex h-full flex-col bg-gray-900 text-sm text-green-400"
+      style={{ fontFamily: "'UDEVGothicNF', 'Courier New', monospace" }}
+    >
       {/* Terminal Content */}
-      <div 
+      <div
         ref={terminalRef}
-        className="flex-1 p-4 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600"
+        className="scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 flex-1 overflow-y-auto p-4"
         onClick={() => inputRef.current?.focus()}
       >
         {history.map((entry, index) => (
@@ -389,7 +412,10 @@ export default function Terminal() {
               </div>
             )}
             {entry.output.map((line, lineIndex) => (
-              <div key={lineIndex} className="text-gray-300 whitespace-pre-wrap">
+              <div
+                key={lineIndex}
+                className="whitespace-pre-wrap text-gray-300"
+              >
                 {line}
               </div>
             ))}
@@ -407,7 +433,7 @@ export default function Terminal() {
             type="text"
             value={currentCommand}
             onChange={(e) => setCurrentCommand(e.target.value)}
-            className="bg-transparent border-none outline-none text-white flex-1 ml-1"
+            className="ml-1 flex-1 border-none bg-transparent text-white outline-none"
             placeholder=""
             autoFocus
           />

@@ -1,9 +1,6 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(bun add:*)",
-      "WebFetch(domain:kazuki19992.com)"
-    ],
+    "allow": ["Bash(bun add:*)", "WebFetch(domain:kazuki19992.com)"],
     "deny": [],
     "ask": []
   }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "カズ之助 - Frontend Developer Portfolio",
-  description: "The portfolio of カズ之助, a frontend developer specializing in modern web technologies.",
+  description:
+    "The portfolio of カズ之助, a frontend developer specializing in modern web technologies.",
 };
 
 export default function RootLayout({

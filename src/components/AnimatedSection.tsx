@@ -8,10 +8,10 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-export default function AnimatedSection({ 
-  children, 
-  className = "", 
-  delay = 0 
+export default function AnimatedSection({
+  children,
+  className = "",
+  delay = 0,
 }: AnimatedSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -28,13 +28,14 @@ export default function AnimatedSection({
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [delay]);
@@ -43,9 +44,7 @@ export default function AnimatedSection({
     <div
       ref={ref}
       className={`transform transition-all duration-1000 ease-out ${
-        isVisible 
-          ? "translate-y-0 opacity-100" 
-          : "translate-y-12 opacity-0"
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
       } ${className}`}
     >
       {children}
