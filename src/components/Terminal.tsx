@@ -197,7 +197,7 @@ const commands = {
     "Resume Download:",
     "",
     "📄 Generating resume...",
-    "⬇️  [SIMULATED] resume_kazuki_tanaka.pdf",
+    "⬇️  [SIMULATED] resume_kazuki19992.pdf",
     "",
     "Resume includes:",
     "• Complete work history",
